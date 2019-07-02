@@ -15,6 +15,10 @@ export class AppComponent {
       titulo  : 'VENTAS',
       icono   : 'cash',
       url     : '/ventas'
+    }, {
+      titulo  : 'CATEGORIAS',
+      icono   : 'cash',
+      url     : '/categorias'
     }
   ];
   constructor(
