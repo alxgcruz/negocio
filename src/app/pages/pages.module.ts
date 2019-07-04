@@ -6,15 +6,18 @@ import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '../components/components.module';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { ProductosComponent } from './productos/productos.component';
 
 @NgModule({
   declarations: [
     VentasComponent,
-    LoginComponent
+    LoginComponent,
+    ProductosComponent
   ],
   exports: [
     VentasComponent,
-    LoginComponent
+    LoginComponent,
+    ProductosComponent
   ],
   imports: [
     CommonModule,

@@ -15,6 +15,11 @@ export class AppComponent {
       titulo  : 'VENTAS',
       icono   : 'cash',
       url     : '/ventas'
+    },
+    {
+      titulo: 'Productos',
+      icono: 'cube',
+      url: '/productos'
     }
   ];
   constructor(
