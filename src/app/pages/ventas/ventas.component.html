@@ -1,6 +1,91 @@
 <app-header titulo="VENTAS"></app-header>
-<ion-content>
-    <p>
-        ventas works!
-    </p>
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            Zona cliente
+            <ion-select placeholder="Seleccinar" [(ngModel)]="subzona">
+                <ion-select-option [value]="forZonas.id" *ngFor="let forZonas of zonas">{{forZonas.texto}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            Clientes
+            <ion-select placeholder="Seleccinar">
+                <ion-select-option *ngFor="let forClientes of clientes | filtro: subzona:'zona'">{{forClientes.texto}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            Categoria
+            <ion-select placeholder="Seleccinar">
+                <ion-select-option *ngFor="let forCategorias of categorias">{{forCategorias.texto}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            Productos
+            <ion-select placeholder="Seleccinar">
+                <ion-select-option *ngFor="let forProductos of productos">{{forProductos.texto}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-input [(ngModel)]="cant" placeholder="Cantidad"></ion-input>
+            </ion-col>
+            <ion-col>
+                <ion-input placeholder="Precio">$</ion-input>
+            </ion-col>
+            <ion-col>
+                <ion-input placeholder="Importe"></ion-input>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-button expand="block">Agregar Producto</ion-button>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                Código
+            </ion-col>
+            <ion-col>
+                Producto
+            </ion-col>
+            <ion-col>
+                Cantidad
+            </ion-col>
+            <ion-col>
+                Precio
+            </ion-col>
+            <ion-col>
+                Importe
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-input expand="block" placeholder="Total">$</ion-input>
+            </ion-col>
+            <ion-col>
+                <ion-input expand="block" placeholder="Pagos">$</ion-input>
+            </ion-col>
+            <ion-col>
+                <ion-input expand="block" placeholder="Credito">$</ion-input>
+            </ion-col>
+            <ion-col>
+                <ion-input expand="block" placeholder="Cambio">$</ion-input>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-button expand="block">Guardar</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button expand="block">Nueva</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
 </ion-content>

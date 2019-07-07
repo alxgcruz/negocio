@@ -7,17 +7,20 @@ import { ComponentsModule } from '../components/components.module';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ProductosComponent } from './productos/productos.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [
     VentasComponent,
     LoginComponent,
-    ProductosComponent
+    ProductosComponent,
+    PipesModule
   ],
   exports: [
     VentasComponent,
     LoginComponent,
-    ProductosComponent
+    ProductosComponent,
+    PipesModule
   ],
   imports: [
     CommonModule,
