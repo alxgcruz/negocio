@@ -20,7 +20,7 @@ import { PipesModule } from './pipes/pipes.module';
 
 
 @NgModule({
-  declarations: [AppComponent, PipesModule],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -30,7 +30,8 @@ import { PipesModule } from './pipes/pipes.module';
     ComponentsModule,
     HttpClientModule,
     IonicStorageModule.forRoot(),
-    ModalProductoPageModule
+    ModalProductoPageModule,
+    PipesModule
   ],
   providers: [
     StatusBar,

@@ -14,13 +14,13 @@ import { PipesModule } from '../pipes/pipes.module';
   declarations: [
     VentasComponent,
     LoginComponent,
-    CategoriasComponent
+    CategoriasComponent,
     ProductosComponent
   ],
   exports: [
     VentasComponent,
     LoginComponent,
-    CategoriasComponent
+    CategoriasComponent,
     ProductosComponent
   ],
   imports: [
@@ -28,7 +28,8 @@ import { PipesModule } from '../pipes/pipes.module';
     IonicModule,
     RouterModule,
     FormsModule,
-    ComponentsModule
+    ComponentsModule,
+    PipesModule
   ]
 })
 export class PagesModule { }
