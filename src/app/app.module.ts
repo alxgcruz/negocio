@@ -15,6 +15,7 @@ import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { IonicStorageModule } from '@ionic/storage';
+import { ModalProductoPageModule } from './pages/modal-producto/modal-producto.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { IonicStorageModule } from '@ionic/storage';
     PagesModule,
     ComponentsModule,
     HttpClientModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    ModalProductoPageModule
   ],
   providers: [
     StatusBar,

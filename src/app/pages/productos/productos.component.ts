@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { ModalProductoPage } from '../modal-producto/modal-producto.page';
 
 @Component({
   selector: 'app-productos',
@@ -8,13 +10,24 @@ import { Component, OnInit } from '@angular/core';
 export class ProductosComponent implements OnInit {
 
   productos: any[];
+  value = 0;
 
-  constructor() {
+  constructor(private modal: ModalController) {
     this.initItem();
     this.productos[0].open = true;
   }
 
   ngOnInit() { }
+
+  async openModal() {
+    const modal = await this.modal.create({
+      component: ModalProductoPage,
+      componentProps: {
+        custom_id: this.value
+      }
+    });
+    modal.present();
+  }
 
   initItem() {
     this.productos = [
@@ -98,11 +111,9 @@ export class ProductosComponent implements OnInit {
     const val = ev.target.value;
 
     if (val && val.trim() !== '') {
-      for (let i of this.productos) {
-        this.productos[i][0] = this.productos[i][0].filter((item) => {
-          return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        this.productos = this.productos.filter((item) => {
+          return (item.nombre.toLowerCase().indexOf(val.toLowerCase()) > -1);
         });
-      }
     }
   }
 
