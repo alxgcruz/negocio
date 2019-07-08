@@ -16,14 +16,14 @@ import { PipesModule } from '../pipes/pipes.module';
     VentasComponent,
     LoginComponent,
     CategoriasComponent,
-    ProductosComponent
+    ProductosComponent,
     UsuariosComponent
   ],
   exports: [
     VentasComponent,
     LoginComponent,
     CategoriasComponent,
-    ProductosComponent
+    ProductosComponent,
     UsuariosComponent
   ],
   imports: [
