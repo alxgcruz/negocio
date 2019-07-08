@@ -18,6 +18,14 @@ import { IonicStorageModule } from '@ionic/storage';
 import { ModalProductoPageModule } from './pages/modal-producto/modal-producto.module';
 import { PipesModule } from './pipes/pipes.module';
 
+// firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,12 +39,16 @@ import { PipesModule } from './pipes/pipes.module';
     HttpClientModule,
     IonicStorageModule.forRoot(),
     ModalProductoPageModule,
-    PipesModule
+    PipesModule,
+    AngularFireModule.initializeApp(environment.firebaseconfig),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    AngularFirestore
   ],
   bootstrap: [AppComponent]
 })
