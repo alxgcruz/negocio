@@ -25,11 +25,12 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { ModalCategoriasComponent } from './components/modal-categorias/modal-categorias.component';
 
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],
+  entryComponents: [ ModalCategoriasComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

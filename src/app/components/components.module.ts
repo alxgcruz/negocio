@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
+import { ModalCategoriasComponent } from './modal-categorias/modal-categorias.component';
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    ModalCategoriasComponent
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    ModalCategoriasComponent
   ],
   imports: [
     CommonModule,

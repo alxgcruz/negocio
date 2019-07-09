@@ -1,54 +1,39 @@
 <app-header titulo="CATEGORIAS"></app-header>
+
 <ion-content>
-  <ion-row>
-    <ion-col size="12" size-md="6">
-      <ion-item>
-        <ion-label>CATEGORIAS</ion-label>
-        <ion-select interface="popover">
-          <ion-select-option value="galle">GALLETAS</ion-select-option>
-          <ion-select-option value="sabri">SABRITAS</ion-select-option>
-          <ion-select-option value="bebi">BEBIDAS</ion-select-option>
-          <ion-select-option value="dulce">DULCES</ion-select-option>
-          <ion-select-option value="yogu">YOGURTS</ion-select-option>
-          <ion-select-option value="tama">TAMALES</ion-select-option>
-        </ion-select>
-      </ion-item>
-    </ion-col>
-    <ion-col size="12" size-md="6">
-      <ion-item >
-        <ion-label position="floating">CÓDIGO:</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-    </ion-col>
-    <ion-col size="12" size-md="6">
-      <ion-item >
-        <ion-label position="floating">DESCRIPCIÓN:</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-    </ion-col>
-    <ion-col size="12" size-md="6">
+  <ion-searchbar (ionInput)="getNombre($event)" placeholder="Buscar categorias..." animated></ion-searchbar>
 
-      <ion-item >
-        <ion-label position="floating">OBSERVACIONES:</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-    </ion-col>
+  <ion-list *ngFor="let item of categorias; let i = index" lines="none" class="accordion-list ion-no-padding">
+    <ion-item tappable (click)="toggleCategoria(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
+      <ion-icon slot="start" name="arrow-forward" *ngIf="!item.open"></ion-icon>
+      <ion-icon slot="start" name="arrow-down" *ngIf="item.open"></ion-icon>
+      <ion-label>{{ item.nombre }}</ion-label>
+    </ion-item>
 
-    <ion-col>
-
-      <ion-label>
-        <ion-checkbox></ion-checkbox>
-        <span>Categoria activa</span>
-      </ion-label>
-    </ion-col>
-
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      <ion-button color="primary" expand="block">Limpiar datos</ion-button>
-    </ion-col>
-    <ion-col>
-      <ion-button color="primary" expand="block">Guardar</ion-button>
-    </ion-col>
-  </ion-row>
+    <div *ngIf="item.detalles && item.open" color="#F1F1F1">
+      <ion-list *ngFor="let child of item.detalles; let j = index" lines="none" class="child-list">
+        <ion-item>
+          <ion-label><span>Categoria: </span>{{ child.categoria }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><span>Marca: </span>{{ child.marca }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><span>Existencia: </span>{{ child.existencia }}</ion-label>
+        </ion-item>
+        <!--ion-item tappable (click)="toggleDetalles(i, j)">
+                  <ion-icon slot="start" name="add" *ngIf="!child.open"></ion-icon>
+                  <ion-icon slot="start" name="close" *ngIf="child.open"></ion-icon>
+                  <ion-label>
+                      Precio
+                  </ion-label>
+              </ion-item-->
+      </ion-list>
+    </div>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
