@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { ProductosComponent } from './productos/productos.component';
 import { PipesModule } from '../pipes/pipes.module';
+import { ZonasComponent } from './zonas/zonas.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +18,16 @@ import { PipesModule } from '../pipes/pipes.module';
     LoginComponent,
     CategoriasComponent,
     ProductosComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    ZonasComponent
   ],
   exports: [
     VentasComponent,
     LoginComponent,
     CategoriasComponent,
     ProductosComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    ZonasComponent
   ],
   imports: [
     CommonModule,

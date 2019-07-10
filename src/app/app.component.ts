@@ -24,6 +24,11 @@ export class AppComponent {
       titulo: 'Productos',
       icono: 'cube',
       url: '/productos'
+    },
+    {
+      titulo: 'Zonas',
+      icono: 'map',
+      url: '/zonas'
     }
   ];
   constructor(
