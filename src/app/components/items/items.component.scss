@@ -1,0 +1,8 @@
+.accordion-list {
+    margin-bottom: 4px;
+    --ion-item-background: #FFF;
+    .section,
+    .section-active {
+        --min-height: 5px;
+    }
+}

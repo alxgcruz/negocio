@@ -5,15 +5,21 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { ModalMainComponent } from './modal-main/modal-main.component';
 import { FormsModule } from '@angular/forms';
+import { ItemsComponent } from './items/items.component';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    ModalMainComponent
+    ModalMainComponent,
+    ItemsComponent,
+    ItemComponent
   ],
   exports: [
     HeaderComponent,
-    ModalMainComponent
+    ModalMainComponent,
+    ItemsComponent,
+    ItemComponent
   ],
   imports: [
     CommonModule,

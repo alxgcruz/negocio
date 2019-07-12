@@ -1,0 +1,26 @@
+<ion-item tappable (click)="verRespuesta()" [ngClass]="{'section-active': ver, 'section': !ver}">
+  <ion-icon slot="start" name="arrow-forward" *ngIf="!ver"></ion-icon>
+  <ion-icon slot="start" name="arrow-down" *ngIf="ver"></ion-icon>
+  <ion-label>{{ objeto.nombre }}</ion-label>
+</ion-item>
+
+<ion-list *ngIf="ver" color="#F1F1F1" lines="none" class="child-list">
+
+  <ion-item>
+    <ion-label><span>Categoria: </span>{{ objeto.nombre }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label><span>Marca: </span>{{ objeto.marca }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label><span>Existencia: </span>{{ objeto.existencia }}</ion-label>
+  </ion-item>
+<ion-item>
+    <ion-button color="secondary" *ngIf="ver" slot="start" (click)="abrirModal( )">
+      <ion-icon name="edit"></ion-icon>Editar
+    </ion-button>
+    <ion-button color="danger" *ngIf="ver" slot="end" (click)="eliminar()">
+      <ion-icon name="trash"></ion-icon>Eliminar
+    </ion-button>
+</ion-item>
+</ion-list>
