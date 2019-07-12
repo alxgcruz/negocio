@@ -18,6 +18,7 @@ export class ZonasComponent implements OnInit {
   ngOnInit() {
     this.crudService.init('zonas');
     this.crudService.getAll().subscribe( resp => {
+      console.log('Obteniendo zonas->', resp);
       this.zonas = resp;
     });
   }
@@ -35,6 +36,7 @@ export class ZonasComponent implements OnInit {
     console.log(data);
     if ( data ) {
       this.zona = data.objeto;
+      this.crudService.add( this.zona );
       // this.storage.set('idioma', this.idioma);
     }
   }
