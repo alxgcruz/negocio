@@ -26,6 +26,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { ModalMainComponent } from './components/modal-main/modal-main.component';
+import { ModalCategoriasComponent } from './components/modal-categorias/modal-categorias.component';
 
 
 @NgModule({
