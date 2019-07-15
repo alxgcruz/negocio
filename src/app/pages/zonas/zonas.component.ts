@@ -12,6 +12,7 @@ export class ZonasComponent implements OnInit {
 
   zonas: any = [];
   zona: any = {};
+  palabraBuscada = '';
 
   constructor(private modal: ModalController, private crudService: CrudService) { }
 
@@ -36,8 +37,8 @@ export class ZonasComponent implements OnInit {
     console.log(data);
     if ( data ) {
       this.zona = data.objeto;
-      this.crudService.add( this.zona );
-      // this.storage.set('idioma', this.idioma);
+      await this.crudService.add( this.zona );
+      this.zona = {};
     }
   }
 

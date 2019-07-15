@@ -1,14 +1,14 @@
 <app-header titulo="Zonas"></app-header>
 
 <ion-content>
-    <ion-searchbar placeholder="Buscar zonas..." animated></ion-searchbar>
+    <ion-searchbar [(ngModel)]="palabraBuscada" placeholder="Buscar zonas..." animated></ion-searchbar>
 
-    <app-items [arreglo]="zonas" formulario="zonas"></app-items>
+    <app-items [arreglo]="zonas | filtro: palabraBuscada: 'nombre'" formulario="zonas"></app-items>
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button (click)="abrirModal()">
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>
-    
+
 </ion-content>

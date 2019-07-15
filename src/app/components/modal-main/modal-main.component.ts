@@ -8,7 +8,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class ModalMainComponent implements OnInit {
 
-  // @Input() formulario;
+  @Input() formulario;
   @Input() objeto;
 
   constructor(private modal: ModalController) { }

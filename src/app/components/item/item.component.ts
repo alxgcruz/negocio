@@ -37,11 +37,10 @@ export class ItemComponent implements OnInit {
     });
     await modal.present();
     const { data } = await modal.onDidDismiss();
-    console.log(data.objeto);
     if ( data ) {
+      console.log(data.objeto);
       this.objeto = data.objeto;
       this.crudService.update( this.objeto );
-      // this.storage.set('idioma', this.idioma);
     }
   }
 
