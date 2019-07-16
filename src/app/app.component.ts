@@ -29,6 +29,11 @@ export class AppComponent {
       titulo: 'Zonas',
       icono: 'map',
       url: '/zonas'
+    },
+    {
+      titulo: 'Clientes',
+      icono: 'person',
+      url: '/clientes'
     }
   ];
   constructor(

@@ -11,6 +11,7 @@ import { CategoriasComponent } from './categorias/categorias.component';
 import { ProductosComponent } from './productos/productos.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { ZonasComponent } from './zonas/zonas.component';
+import { ClientesComponent } from './clientes/clientes.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ZonasComponent } from './zonas/zonas.component';
     CategoriasComponent,
     ProductosComponent,
     UsuariosComponent,
-    ZonasComponent
+    ZonasComponent,
+    ClientesComponent
   ],
   exports: [
     VentasComponent,
@@ -27,7 +29,8 @@ import { ZonasComponent } from './zonas/zonas.component';
     CategoriasComponent,
     ProductosComponent,
     UsuariosComponent,
-    ZonasComponent
+    ZonasComponent,
+    ClientesComponent
   ],
   imports: [
     CommonModule,
