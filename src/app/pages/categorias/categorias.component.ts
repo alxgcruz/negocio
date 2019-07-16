@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalMainComponent } from '../../components/modal-main/modal-main.component';
 import { ModalController } from '@ionic/angular';
-import { CategoriasService } from '../../services/categorias.service';
 import { CrudService } from '../../services/crud.service';
 import { async } from '@angular/core/testing';
 

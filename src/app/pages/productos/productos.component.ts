@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { ModalProductoPage } from '../modal-producto/modal-producto.page';
-import { ProductosService } from '../../services/productos.service';
+import { CrudService } from '../../services/crud.service';
+import { ModalMainComponent } from '../../components/modal-main/modal-main.component';
 
 @Component({
   selector: 'app-productos',
@@ -13,18 +13,18 @@ export class ProductosComponent implements OnInit {
   productos: any[];
   value = 0;
 
-  constructor(private modal: ModalController, private prodService: ProductosService) {
+  constructor(private modal: ModalController, private prodService: CrudService) {
     this.initItem();
     this.productos[0].open = true;
   }
 
   ngOnInit() {
-    this.prodService.getAllproductos();
+    this.prodService.getAll();
   }
 
   async openModal() {
     const modal = await this.modal.create({
-      component: ModalProductoPage,
+      component: ModalMainComponent,
       componentProps: {
         custom_id: this.value
       }
