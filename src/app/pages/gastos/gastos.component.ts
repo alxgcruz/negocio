@@ -12,6 +12,8 @@ export class GastosComponent implements OnInit {
 
   gastos: any = [];
   gasto: any = {};
+  palabraBuscada = '';
+
 
   constructor(private modal: ModalController, private crudService: CrudService) { }
 
@@ -36,6 +38,7 @@ export class GastosComponent implements OnInit {
     if (data) {
       this.gasto = data.objeto;
       this.crudService.add(this.gasto);
+      this.gasto = {};
     }
   }
 

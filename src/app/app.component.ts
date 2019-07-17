@@ -12,11 +12,12 @@ export class AppComponent {
 
   public appPages = [
     {
-      titulo  : 'VENTAS',
+      titulo  : 'Ventas',
       icono   : 'cash',
       url     : '/ventas'
-    }, {
-      titulo  : 'CATEGORIAS',
+    }, 
+    {
+      titulo  : 'Categorias',
       icono   : 'cash',
       url     : '/categorias'
     },
@@ -31,9 +32,13 @@ export class AppComponent {
       url: '/zonas'
     },
     {
-      titulo: 'GASTOS',
+      titulo: 'Gastos',
       icono: 'map',
       url: '/gastos'
+    },{
+      titulo: 'Usuarios',
+      icono: 'person',
+      url: '/usuarios'
     }
   ];
   constructor(

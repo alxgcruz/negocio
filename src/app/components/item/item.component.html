@@ -1,61 +1,68 @@
 <ion-item tappable (click)="verRespuesta()" [ngClass]="{'section-active': ver, 'section': !ver}">
-    <ion-icon slot="start" name="arrow-forward" *ngIf="!ver"></ion-icon>
-    <ion-icon slot="start" name="arrow-down" *ngIf="ver"></ion-icon>
-    <ion-label>{{ objeto.nombre }}</ion-label>
+  <ion-icon slot="start" name="arrow-forward" *ngIf="!ver"></ion-icon>
+  <ion-icon slot="start" name="arrow-down" *ngIf="ver"></ion-icon>
+  <ion-label>{{ objeto.nombre }}</ion-label>
 </ion-item>
 
 <ion-list *ngIf="ver" color="#F1F1F1" lines="none" class="child-list">
 
   <ion-item>
-    <ion-label><span>Categoria: </span>{{ objeto.nombre }}</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label><span>Marca: </span>{{ objeto.marca }}</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label><span>Existencia: </span>{{ objeto.existencia }}</ion-label>
-  </ion-item>
-  <ion-item>
-      <ion-label><span>Cóigo: </span>{{ objeto.codigo }}</ion-label>
-    </ion-item>
-    <ion-item>
-        <ion-label><span>Descripción: </span>{{ objeto.descripcion }}</ion-label>
-      </ion-item>
-      <ion-item>
-          <ion-label><span>Observaciones: </span>{{ objeto.observaciones }}</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label><span>Fecha: </span>{{ objeto.fecha }}</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label><span>Monto: </span>{{ objeto.monto }}</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label><span>Observaciones: </span>{{ objeto.observaciones }}</ion-label>
-        </ion-item>
-<ion-item>
-    <ion-button color="secondary" *ngIf="ver" slot="start" (click)="abrirModal( )">
-      <ion-icon name="edit"></ion-icon>Editar
-    </ion-button>
-    <ion-button color="danger" *ngIf="ver" slot="end" (click)="eliminar()">
-      <ion-icon name="trash"></ion-icon>Eliminar
-    </ion-button>
-</ion-item>
-</ion-list>
-
-<ion-list *ngIf="formulario==='usuarios'" color="#F1F1F1" lines="none" class="child-list">
-  <ion-item>
     <ion-label><span>Nombre: </span>{{ objeto.nombre }}</ion-label>
   </ion-item>
-  <ion-item>
-    <ion-label><span>Usuario: </span>{{ objeto.usuario }}</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label><span>Contraseña: </span>{{ objeto.contrasenia }}</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label><span>Activo: </span>{{ objeto.activo }}</ion-label>
-  </ion-item>
+
+  <!-- productos -->
+  <ion-list *ngIf="formulario === 'productos'">
+    <ion-item>
+      <ion-label><span>Categoria: </span>{{ objeto.nombre }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><span>Marca: </span>{{ objeto.marca }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><span>Existencia: </span>{{ objeto.existencia }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- productos -->
+
+  <!-- gastos -->
+  <ion-list *ngIf="formulario === 'gastos'">
+    <ion-item>
+      <ion-label><span>Fecha: </span>{{ objeto.fecha }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><span>Monto: </span>{{ objeto.monto }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><span>Observaciones: </span>{{ objeto.observaciones }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- gastos -->
+
+  <!-- categorias -->
+  <ion-list *ngIf="formulario === 'categorias'">
+    <ion-item>
+      <ion-label><span>Código: </span>{{ objeto.codigo }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><span>Descripción: </span>{{ objeto.descripcion }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><span>Observaciones: </span>{{ objeto.observaciones }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- categorias -->
+
+  <!-- usuarios -->
+  <ion-list *ngIf="formulario === 'usuarios'">
+    <ion-item>
+      <ion-label><span>Usuario: </span>{{ objeto.usuario }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><span>Contraseña: </span>{{ objeto.contrasenia }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- usuarios -->
+
   <ion-item>
     <ion-button color="secondary" *ngIf="ver" slot="start" (click)="abrirModal( )">
       <ion-icon name="edit"></ion-icon>Editar
@@ -64,4 +71,6 @@
       <ion-icon name="trash"></ion-icon>Eliminar
     </ion-button>
   </ion-item>
+
+
 </ion-list>

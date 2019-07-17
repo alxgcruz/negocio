@@ -1,7 +1,7 @@
 <app-header titulo="Usuarios"></app-header>
 
 <ion-content>
-    <ion-searchbar placeholder="Buscar usuarios..." animated></ion-searchbar>
+    <ion-searchbar [(ngModel)]="palabraBuscada" placeholder="Buscar zonas..." animated></ion-searchbar>
 
     <app-items [arreglo]="usuarios" formulario="usuarios"></app-items>
 

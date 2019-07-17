@@ -12,6 +12,7 @@ export class UsuariosComponent implements OnInit {
 
   usuarios: any = [];
   usuario: any = {};
+  palabraBuscada = '';
 
   constructor(private modal: ModalController, private crudService: CrudService) { }
 
@@ -37,6 +38,7 @@ export class UsuariosComponent implements OnInit {
     if ( data ) {
       this.usuario = data.objeto;
       this.crudService.add( this.usuario );
+      this.usuario = {};
     }
   }
 

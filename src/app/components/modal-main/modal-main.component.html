@@ -10,14 +10,8 @@
 </ion-header>
 
 <ion-content>
-    <!--
-                         _            _            
-     _ __  _ __ ___   __| |_   _  ___| |_ ___  ___ 
-    | '_ \| '__/ _ \ / _` | | | |/ __| __/ _ \/ __|
-    | |_) | | | (_) | (_| | |_| | (__| || (_) \__ \
-    | .__/|_|  \___/ \__,_|\__,_|\___|\__\___/|___/
-    |_|                                            
-    -->
+
+    <!-- productos -->
     <ion-row *ngIf="formulario==='productos'">
         <ion-col size="12">
             <ion-item>
@@ -80,6 +74,8 @@
             </ion-item>
         </ion-col>
     </ion-row>
+
+
     <!-- zonas -->
     <ion-row *ngIf="formulario==='zonas'">
         <ion-col size="12" size-md="6">
@@ -89,6 +85,8 @@
             </ion-item>
         </ion-col>
     </ion-row>
+
+
     <!-- usuarios -->
     <ion-row *ngIf="formulario==='usuarios'">
         <ion-col size="12" size-md="6">
@@ -109,18 +107,7 @@
                 <ion-input type="text" name="contrasenia" [(ngModel)]="objeto.contrasenia"></ion-input>
             </ion-item>
         </ion-col>
-        <ion-col size="12" size-md="6">
-            <ion-item>
-                <ion-label>Activo</ion-label>
-                <ion-toggle checked [(ngModel)]="objeto.activo"></ion-toggle>
-            </ion-item>
-        </ion-col>
-
     </ion-row>
-
-
-
-
 
 
     <!-- categorias -->
@@ -151,6 +138,7 @@
         </ion-col>
     </ion-row>
 
+
     <!-- Gastos -->
     <ion-row *ngIf="formulario==='gastos'">
         <ion-col size="12">
@@ -179,10 +167,13 @@
         </ion-col>
     </ion-row>
 
+
     <!-- NOTA: DEJAR SIEMPRE AL FINAL -->
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button (click)="salirConArgumentos()">
             <ion-icon name="save"></ion-icon>
         </ion-fab-button>
     </ion-fab>
+
+
 </ion-content>

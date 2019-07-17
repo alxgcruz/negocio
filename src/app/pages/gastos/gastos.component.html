@@ -1,7 +1,7 @@
-<app-header titulo="GASTOS"></app-header>
+<app-header titulo="Gastos"></app-header>
 
 <ion-content>
-  <ion-searchbar placeholder="Buscar gastos..." animated></ion-searchbar>
+  <ion-searchbar [(ngModel)]="palabraBuscada" placeholder="Buscar zonas..." animated></ion-searchbar>
 
   <app-items [arreglo]="gastos" formulario="gastos"></app-items>
 

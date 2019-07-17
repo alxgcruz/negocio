@@ -13,6 +13,7 @@ export class CategoriasComponent implements OnInit {
 
   categorias: any = [];
   categoria: any = {};
+  palabraBuscada = '';
 
   constructor(private modal: ModalController, private crudService: CrudService) { }
 
@@ -38,6 +39,7 @@ export class CategoriasComponent implements OnInit {
     if (data) {
       this.categoria = data.objeto;
       this.crudService.add(this.categoria);
+      this.categoria = {};
     }
   }
 }

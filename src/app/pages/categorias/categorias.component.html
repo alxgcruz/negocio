@@ -1,7 +1,7 @@
-<app-header titulo="CATEGORIAS"></app-header>
+<app-header titulo="Categorías"></app-header>
 
 <ion-content>
-  <ion-searchbar placeholder="Buscar categorias..." animated></ion-searchbar>
+  <ion-searchbar [(ngModel)]="palabraBuscada" placeholder="Buscar zonas..." animated></ion-searchbar>
 
   <app-items [arreglo]="categorias" formulario="categorias"></app-items>
 
