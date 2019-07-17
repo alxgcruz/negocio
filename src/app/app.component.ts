@@ -10,42 +10,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent {
 
-  public appPages = [
-    {
-      titulo  : 'Ventas',
-      icono   : 'cash',
-      url     : '/ventas'
-    }, 
-    {
-      titulo  : 'Categorias',
-      icono   : 'cash',
-      url     : '/categorias'
-    },
-    {
-      titulo: 'Productos',
-      icono: 'cube',
-      url: '/productos'
-    },
-    {
-      titulo: 'Zonas',
-      icono: 'map',
-      url: '/zonas'
-    },
-    {
-      titulo: 'Gastos',
-      icono: 'map',
-      url: '/gastos'
-    },{
-      titulo: 'Usuarios',
-      icono: 'person',
-      url: '/usuarios'
-    },
-    {
-      titulo: 'Clientes',
-      icono: 'person',
-      url: '/clientes'
-    }
-  ];
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

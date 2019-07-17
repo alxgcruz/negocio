@@ -5,3 +5,9 @@ export interface Usuario {
     email?: string;
     password?: string;
 }
+
+export interface Menu {
+    icon: string;
+    nombre: string;
+    path: string;
+}

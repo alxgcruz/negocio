@@ -7,19 +7,22 @@ import { ModalMainComponent } from './modal-main/modal-main.component';
 import { FormsModule } from '@angular/forms';
 import { ItemsComponent } from './items/items.component';
 import { ItemComponent } from './item/item.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     ModalMainComponent,
     ItemsComponent,
-    ItemComponent
+    ItemComponent,
+    MenuComponent
   ],
   exports: [
     HeaderComponent,
     ModalMainComponent,
     ItemsComponent,
-    ItemComponent
+    ItemComponent,
+    MenuComponent
   ],
   imports: [
     CommonModule,
