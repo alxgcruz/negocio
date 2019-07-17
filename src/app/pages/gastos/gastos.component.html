@@ -1,0 +1,13 @@
+<app-header titulo="GASTOS"></app-header>
+
+<ion-content>
+  <ion-searchbar placeholder="Buscar gastos..." animated></ion-searchbar>
+
+  <app-items [arreglo]="gastos" formulario="gastos"></app-items>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="abrirModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
