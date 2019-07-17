@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { CrudService } from '../../services/crud.service';
 
 @Component({
   selector: 'app-modal-main',
@@ -8,13 +9,21 @@ import { ModalController } from '@ionic/angular';
 })
 export class ModalMainComponent implements OnInit {
 
-  // @Input() formulario;
+  @Input() formulario;
   @Input() objeto;
+  categorias: any[];
 
-  constructor(private modal: ModalController) { }
+  constructor(private modal: ModalController, private crudService: CrudService) { }
 
   ngOnInit() {
-
+    if (this.formulario === 'productos') {
+      this.crudService.init('categorias');
+      this.crudService.getAll().subscribe(resp => {
+        console.log('Obteniendo categorias->', resp);
+        this.categorias = resp;
+      });
+      this.crudService.init('productos');
+    }
   }
 
   addObjeto() {

@@ -1,12 +1,12 @@
 <ion-header>
-  <ion-toolbar color="primary">
-      <ion-title>Añadir {{ formulario }}</ion-title>
-      <ion-buttons slot="end">
-          <ion-button (click)="salirSinArgumentos()">
-              <ion-icon slot="icon-only" name="close"></ion-icon>
-          </ion-button>
-      </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-title>Añadir {{ formulario }}</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="salirSinArgumentos()">
+                <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -18,68 +18,70 @@
     | .__/|_|  \___/ \__,_|\__,_|\___|\__\___/|___/
     |_|                                            
     -->
-  <ion-row *ngIf="formulario==='productos'">
-      <ion-col size="12">
-          <ion-item>
-              <ion-label position="floating">Categoria:</ion-label>
-              <ion-input type="text"></ion-input>
-          </ion-item>
-      </ion-col>
-      <ion-col size="12">
-          <ion-item>
-              <ion-label position="floating">Descripción:</ion-label>
-              <ion-textarea></ion-textarea>
-          </ion-item>
-      </ion-col>
-      <ion-col size="12">
-          <ion-item>
-              <ion-label position="floating">Precio:</ion-label>
-              <ion-input name="precio" [(ngModel)]="objeto.precio" type="number"></ion-input>
-          </ion-item>
-      </ion-col>
-      <ion-col size="12">
-          <ion-item>
-              <ion-label position="floating">Mínimo:</ion-label>
-              <ion-input type="number"></ion-input>
-          </ion-item>
-      </ion-col>
-      <ion-col size="12">
-          <ion-item>
-              <ion-label position="floating">Máximo:</ion-label>
-              <ion-input type="number"></ion-input>
-          </ion-item>
-      </ion-col>
-      <ion-col size="12">
-          <ion-item>
-              <ion-label position="floating">Marca:</ion-label>
-              <ion-input type="text"></ion-input>
-          </ion-item>
-      </ion-col>
-      <ion-col size="12">
-          <ion-item>
-              <ion-label position="floating">Existencia:</ion-label>
-              <ion-input type="text"></ion-input>
-          </ion-item>
-      </ion-col>
-      <ion-col size="12">
-          <ion-item>
-              <ion-label>Activa</ion-label>
-              <ion-toggle checked></ion-toggle>
-          </ion-item>
-      </ion-col>
-      <ion-col size="12">
-          <ion-item>
-              <ion-label position="floating">Precios:</ion-label>
-              <ion-input type="text"></ion-input>
-          </ion-item>
-      </ion-col>
-      <ion-col size="12">
-          <ion-item>
-              <ion-label position="floating">Observaciones:</ion-label>
-              <ion-textarea></ion-textarea>
-          </ion-item>
-      </ion-col>
-  </ion-row>
+    <ion-row *ngIf="formulario==='productos'">
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Nombre:</ion-label>
+                <ion-input type="text" name="nombre" [(ngModel)]="objeto.nombre"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label>Categoria</ion-label>
+                <ion-select placeholder="Selecccionar categoria" [(ngModel)]="objeto.categoria">
+                    <ion-select-option [value]="i.id" *ngFor="let i of categorias">{{i.nombre}}</ion-select-option>
+                </ion-select>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Descripción:</ion-label>
+                <ion-textarea name="descripcion" [(ngModel)]="objeto.descripcion"></ion-textarea>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Precio:</ion-label>
+                <ion-input name="precio" type="number" [(ngModel)]="objeto.precio"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Mínimo:</ion-label>
+                <ion-input name="minimo" type="number" [(ngModel)]="objeto.minimo"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Máximo:</ion-label>
+                <ion-input name="maximo" type="number" [(ngModel)]="objeto.maximo"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Marca:</ion-label>
+                <ion-input name="marca" type="text" [(ngModel)]="objeto.marca"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Existencia:</ion-label>
+                <ion-input name="existencia" type="text" [(ngModel)]="objeto.existencia"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Precios:</ion-label>
+                <ion-input name="precios" type="text" [(ngModel)]="objeto.precios"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Observaciones:</ion-label>
+                <ion-textarea name="observaciones" [(ngModel)]="objeto.observaciones"></ion-textarea>
+            </ion-item>
+        </ion-col>
+    </ion-row>
     <!-- zonas -->
     <ion-row *ngIf="formulario==='zonas'">
         <ion-col size="12" size-md="6">
@@ -90,9 +92,9 @@
         </ion-col>
     </ion-row>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button (click)="salirConArgumentos()">
-          <ion-icon name="save"></ion-icon>
-      </ion-fab-button>
-  </ion-fab>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="salirConArgumentos()">
+            <ion-icon name="save"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 </ion-content>

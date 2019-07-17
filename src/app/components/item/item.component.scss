@@ -9,10 +9,17 @@
 }
 
 .child-list {
-    padding-left: 20px;
+    padding: 20px;
+    padding-top: 0px;
     --ion-item-background: #F1F1F1;
     .child,
     .child-active {
         margin-bottom: 2px;
     }
+}
+
+span {
+    min-width: 95px;
+    display: inline-block;
+    font-weight: bold;
 }

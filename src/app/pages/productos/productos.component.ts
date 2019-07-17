@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ModalProductoPage } from '../modal-producto/modal-producto.page';
 import { ProductosService } from '../../services/productos.service';
+import { CrudService } from '../../services/crud.service';
+import { ModalMainComponent } from '../../components/modal-main/modal-main.component';
 
 @Component({
   selector: 'app-productos',
@@ -11,112 +13,32 @@ import { ProductosService } from '../../services/productos.service';
 export class ProductosComponent implements OnInit {
 
   productos: any[];
-  value = 0;
+  producto: any = {};
 
-  constructor(private modal: ModalController, private prodService: ProductosService) {
-    this.initItem();
-    this.productos[0].open = true;
-  }
+  constructor(private modal: ModalController, private crudService: CrudService) { }
 
   ngOnInit() {
-    this.prodService.getAllproductos();
+    this.crudService.init('productos');
+    this.crudService.getAll().subscribe( resp => {
+      console.log('Obteniendo productos->', resp);
+      this.productos = resp;
+    });
   }
 
-  async openModal() {
+  async abrirModal() {
     const modal = await this.modal.create({
-      component: ModalProductoPage,
+      component: ModalMainComponent,
       componentProps: {
-        custom_id: this.value
+        formulario: 'productos',
+        objeto: this.producto
       }
     });
-    modal.present();
-  }
-
-  initItem() {
-    this.productos = [
-      {
-        nombre: 'Refresco',
-        detalles: [
-          {
-            categoria: 'Bebidas',
-            descripcion: 'Refresco de cola',
-            costo: [
-              {
-                ideal: 15,
-                minimo: 10,
-                maximo: 20
-              }
-            ],
-            marca: 'Coca Cola',
-            existencia: 10,
-            precio: [
-              {
-                uno: 16,
-                dos: 18,
-                tres: 26,
-                cuatro: 36
-              }
-            ],
-            observaciones: 'Caducan mañana'
-          }
-        ]
-      },
-      {
-        nombre: 'Galletas',
-        detalles: [
-          {
-            precio: 10,
-            marca: 'Gamesa',
-            cantidad: 2
-          }
-        ]
-      },
-      {
-        nombre: 'Sabritas',
-        detalles: [
-          {
-            precio: 11,
-            marca: 'Sabritas',
-            cantidad: 15
-          }
-        ]
-      },
-      {
-        nombre: 'Jugo',
-        detalles: [
-          {
-            precio: 11.5,
-            marca: 'Jumex',
-            cantidad: 22
-          }
-        ]
-      }
-    ];
-  }
-
-  toggleProducto(index) {
-    this.productos[index].open = !this.productos[index].open;
-
-    if (this.productos[index].open) {
-      this.productos
-      .filter((item, itemIndex) => itemIndex !== index)
-      .map(item => item.open = false);
-    }
-  }
-
-  toggleDetalles(index, childIndex) {
-    this.productos[index].children[0].children[childIndex].open = !this.productos[index].children[0].children[childIndex].open;
-  }
-
-  getNombre(ev: any) {
-    this.initItem();
-
-    const val = ev.target.value;
-
-    if (val && val.trim() !== '') {
-        this.productos = this.productos.filter((item) => {
-          return (item.nombre.toLowerCase().indexOf(val.toLowerCase()) > -1);
-        });
+    await modal.present();
+    const { data } = await modal.onDidDismiss();
+    console.log('data->', data);
+    if ( data ) {
+      this.producto = data.objeto;
+      this.crudService.add( this.producto );
     }
   }
 
