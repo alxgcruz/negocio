@@ -22,7 +22,7 @@ import { ClientesComponent } from './clientes/clientes.component';
     ProductosComponent,
     UsuariosComponent,
     ZonasComponent,
-    GastosComponent
+    GastosComponent,
     ClientesComponent
   ],
   exports: [
@@ -32,7 +32,7 @@ import { ClientesComponent } from './clientes/clientes.component';
     ProductosComponent,
     UsuariosComponent,
     ZonasComponent,
-    GastosComponent
+    GastosComponent,
     ClientesComponent
   ],
   imports: [

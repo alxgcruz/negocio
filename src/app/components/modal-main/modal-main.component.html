@@ -168,20 +168,7 @@
     </ion-row>
 
 
-    <!-- NOTA: DEJAR SIEMPRE AL FINAL -->
-
-
-
-    <!--
- 
-    ____ _ _            _            
-   / ___| (_) ___ _ __ | |_ ___  ___ 
-  | |   | | |/ _ \ '_ \| __/ _ \/ __|
-  | |___| | |  __/ | | | ||  __/\__ \
-   \____|_|_|\___|_| |_|\__\___||___/
-                                     
- 
--->
+    <!-- clientes -->
     <ion-row *ngIf="formulario==='clientes'">
         <ion-col size="12">
             <ion-item>
@@ -257,12 +244,14 @@
         </ion-col>
     </ion-row>
 
+
+
+
+    <!-- NOTA: DEJAR SIEMPRE AL FINAL -->
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button (click)="salirConArgumentos()">
             <ion-icon name="save"></ion-icon>
         </ion-fab-button>
     </ion-fab>
-
-
-
+    
 </ion-content>
