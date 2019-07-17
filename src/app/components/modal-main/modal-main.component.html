@@ -89,6 +89,37 @@
             </ion-item>
         </ion-col>
     </ion-row>
+    <!-- usuarios -->
+    <ion-row *ngIf="formulario==='usuarios'">
+        <ion-col size="12" size-md="6">
+            <ion-item>
+                <ion-label position="floating">Nombre:</ion-label>
+                <ion-input type="text" name="nombre" [(ngModel)]="objeto.nombre"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12" size-md="6">
+            <ion-item>
+                <ion-label position="floating">Usuario:</ion-label>
+                <ion-input type="text" name="usuario" [(ngModel)]="objeto.usuario"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12" size-md="6">
+            <ion-item>
+                <ion-label position="floating">Contraseña:</ion-label>
+                <ion-input type="text" name="contrasenia" [(ngModel)]="objeto.contrasenia"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12" size-md="6">
+            <ion-item>
+                <ion-label>Activo</ion-label>
+                <ion-toggle checked [(ngModel)]="objeto.activo"></ion-toggle>
+            </ion-item>
+        </ion-col>
+
+    </ion-row>
+
+
+
 
 
 

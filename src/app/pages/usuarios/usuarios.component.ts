@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { CrudService } from '../../services/crud.service';
+import { ModalMainComponent } from '../../components/modal-main/modal-main.component';
 
 @Component({
   selector: 'app-usuarios',
@@ -7,27 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuariosComponent implements OnInit {
 
-  arrayUsers: any[] = [
-    {
-      id: 1,
-      name: 'Alex',
-      lastname: 'Gómez',
-      username: 'Máster',
-      password: '123'
-    },
-  {
-    id: 2,
-    name: 'Zuriel',
-    lastname: 'Zárate',
-    username: 'Padrote',
-    password: '123456'
-  }];
+  usuarios: any = [];
+  usuario: any = {};
 
-  itemSelected(event) {
-    console.log('item selected');
+  constructor(private modal: ModalController, private crudService: CrudService) { }
+
+  ngOnInit() {
+    this.crudService.init('usuarios');
+    this.crudService.getAll().subscribe( resp => {
+      console.log('Obteniendo usuarios->', resp);
+      this.usuarios = resp;
+    });
   }
-   constructor() { }
 
-  ngOnInit() {}
+  async abrirModal() {
+    const modal = await this.modal.create({
+      component: ModalMainComponent,
+      componentProps: {
+        formulario: 'usuarios',
+        objeto: this.usuario
+      }
+    });
+    await modal.present();
+    const { data } = await modal.onDidDismiss();
+    console.log(data);
+    if ( data ) {
+      this.usuario = data.objeto;
+      this.crudService.add( this.usuario );
+    }
+  }
 
 }

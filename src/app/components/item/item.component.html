@@ -33,3 +33,26 @@
     </ion-button>
 </ion-item>
 </ion-list>
+
+<ion-list *ngIf="formulario==='usuarios'" color="#F1F1F1" lines="none" class="child-list">
+  <ion-item>
+    <ion-label><span>Nombre: </span>{{ objeto.nombre }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label><span>Usuario: </span>{{ objeto.usuario }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label><span>Contraseña: </span>{{ objeto.contrasenia }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label><span>Activo: </span>{{ objeto.activo }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-button color="secondary" *ngIf="ver" slot="start" (click)="abrirModal( )">
+      <ion-icon name="edit"></ion-icon>Editar
+    </ion-button>
+    <ion-button color="danger" *ngIf="ver" slot="end" (click)="eliminar()">
+      <ion-icon name="trash"></ion-icon>Eliminar
+    </ion-button>
+  </ion-item>
+</ion-list>

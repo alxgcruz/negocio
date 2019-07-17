@@ -1,45 +1,14 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>Usuarios</ion-title>
-    </ion-toolbar>
-</ion-header>
+<app-header titulo="Usuarios"></app-header>
 
 <ion-content>
-    <form onsubmit="processForm(event)">
-        <ion-list>
-            <ion-item>
-                <ion-label position="stacked">Usuario</ion-label>
-                <ion-select interface="" value="array.id" okText="Aceptar" cancelText="Cancelar" placeholder="Seleccionar" (ionChange)="itemSelected($event)">
-                    <ion-select-option [value]="array.id" *ngFor="let array of arrayUsers">{{array.name + ' '+ array.lastname}}</ion-select-option>
-                </ion-select>
-            </ion-item>
-            <ion-item>
-                <ion-label position="stacked">Nombre de usuario
-                    <ion-text color="danger">*</ion-text>
-                </ion-label>
-                <ion-input type="text" clear-input="true" required="true"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label position="stacked">Contraseña
-                    <ion-text color="danger">*</ion-text>
-                </ion-label>
-                <ion-input type="password" clear-input="true" required="true"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label position="stacked">Confirmar contraseña
-                    <ion-text color="danger">*</ion-text>
-                </ion-label>
-                <ion-input type="password" clear-input="true" required="true"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label>Activo</ion-label>
-                <ion-checkbox color="primary" checked slot="start"></ion-checkbox>
-            </ion-item>
+    <ion-searchbar placeholder="Buscar usuarios..." animated></ion-searchbar>
 
-            <div class="ion-padding">
-                <ion-button expand="block" size="default" type="submit" class="ion-no-margin">Guardar cambios</ion-button>
-            </div>
-        </ion-list>
-    </form>
+    <app-items [arreglo]="usuarios" formulario="usuarios"></app-items>
 
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="abrirModal()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+    
 </ion-content>
