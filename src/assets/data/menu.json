@@ -1,37 +1,41 @@
-[
-  {
-    "icon": "cash",
-    "nombre": "Ventas",
-    "path": "/ventas"
-  },
-  {
-    "icon": "person",
-    "nombre": "Usuarios",
-    "path": "/usuarios"
-  },
-  {
-    "icon": "contacts",
-    "nombre": "Clientes",
-    "path": "/clientes"
-  },
-  {
-    "icon": "globe",
-    "nombre": "Zonas",
-    "path": "/zonas"
-  },
-  {
-    "icon": "filing",
-    "nombre": "Categorías",
-    "path": "/categorias"
-  },
-  {
-    "icon": "cube",
-    "nombre": "Productos",
-    "path": "/productos"
-  },
-  {
-    "icon": "wallet",
-    "nombre": "Gastos",
-    "path": "/gastos"
-  }
+[{
+        "icon": "cash",
+        "nombre": "Ventas",
+        "path": "/ventas"
+    },
+    {
+        "icon": "cash",
+        "nombre": "Inventario",
+        "path": "/inventario"
+    },
+    {
+        "icon": "person",
+        "nombre": "Usuarios",
+        "path": "/usuarios"
+    },
+    {
+        "icon": "contacts",
+        "nombre": "Clientes",
+        "path": "/clientes"
+    },
+    {
+        "icon": "globe",
+        "nombre": "Zonas",
+        "path": "/zonas"
+    },
+    {
+        "icon": "filing",
+        "nombre": "Categorías",
+        "path": "/categorias"
+    },
+    {
+        "icon": "cube",
+        "nombre": "Productos",
+        "path": "/productos"
+    },
+    {
+        "icon": "wallet",
+        "nombre": "Gastos",
+        "path": "/gastos"
+    }
 ]

@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ItemsComponent } from './items/items.component';
 import { ItemComponent } from './item/item.component';
 import { MenuComponent } from './menu/menu.component';
+import { TablaInventarioComponent } from './tabla-inventario/tabla-inventario.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +16,16 @@ import { MenuComponent } from './menu/menu.component';
     ModalMainComponent,
     ItemsComponent,
     ItemComponent,
-    MenuComponent
+    MenuComponent,
+    TablaInventarioComponent
   ],
   exports: [
     HeaderComponent,
     ModalMainComponent,
     ItemsComponent,
     ItemComponent,
-    MenuComponent
+    MenuComponent,
+    TablaInventarioComponent
   ],
   imports: [
     CommonModule,

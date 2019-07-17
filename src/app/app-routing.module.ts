@@ -8,6 +8,7 @@ import { ZonasComponent } from './pages/zonas/zonas.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { GastosComponent } from './pages/gastos/gastos.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { InventarioComponent } from './pages/inventario/inventario.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -19,8 +20,7 @@ const routes: Routes = [
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'gastos', component: GastosComponent },
   { path: 'clientes', component: ClientesComponent },
-
-
+  { path: 'inventario', component: InventarioComponent }
 ];
 
 @NgModule({

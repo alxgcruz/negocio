@@ -1,0 +1,56 @@
+<app-header titulo="Entradas y Salidas al Inventario"></app-header>
+
+<ion-content>
+    <ion-row>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Categoria</ion-label>
+                <ion-select placeholder="Selecciona una categoría" [(ngModel)]="categoriaSeleccionada">
+                    <ion-select-option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria.nombre }}</ion-select-option>
+                </ion-select>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Productos</ion-label>
+                <ion-select placeholder="Selecciona un producto" [(ngModel)]="productoSeleccionado">
+                    <ion-select-option *ngFor="let producto of productos | filtro: categoriaSeleccionada.id : 'categoria'" [value]="producto">{{ producto.nombre }}</ion-select-option>
+                </ion-select>
+            </ion-item>
+        </ion-col>
+        <ion-col size="6">
+            <ion-item>
+                <ion-label position="floating">Cantidad</ion-label>
+                <ion-input name="cantidad" [(ngModel)]="cantidad"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="6">
+            <ion-item>
+                <ion-label position="floating">Existencia</ion-label>
+                <ion-input>{{ productoSeleccionado.existencia }}</ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item lines="none">
+                <ion-button (click)="aumentar()" slot="start" color="warning">
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                    Entrada
+                </ion-button>
+                <ion-button (click)="disminuir()" slot="end" color="danger">
+                    <ion-icon name="remove-circle-outline"></ion-icon>
+                    Salida
+                </ion-button>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+
+    <app-tabla-inventario [items]="arrayProductos"></app-tabla-inventario>
+
+    <ion-row>
+        <ion-col size="12">
+            <ion-button (click)="guardar()">
+                Guardar
+            </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-content>
