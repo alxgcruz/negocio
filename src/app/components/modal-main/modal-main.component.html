@@ -169,11 +169,100 @@
 
 
     <!-- NOTA: DEJAR SIEMPRE AL FINAL -->
+
+
+
+    <!--
+ 
+    ____ _ _            _            
+   / ___| (_) ___ _ __ | |_ ___  ___ 
+  | |   | | |/ _ \ '_ \| __/ _ \/ __|
+  | |___| | |  __/ | | | ||  __/\__ \
+   \____|_|_|\___|_| |_|\__\___||___/
+                                     
+ 
+-->
+    <ion-row *ngIf="formulario==='clientes'">
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Nombre:</ion-label>
+                <ion-input name="nombre" [(ngModel)]="objeto.nombre" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Zona:</ion-label>
+                <ion-input name="zona" [(ngModel)]="objeto.zona" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Dirección:</ion-label>
+                <ion-input name="direccion" [(ngModel)]="objeto.direccion" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Telefono:</ion-label>
+                <ion-input name="telefono" [(ngModel)]="objeto.telefono" type="number"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Celular:</ion-label>
+                <ion-input name="celular" [(ngModel)]="objeto.celular" type="number"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Contacto:</ion-label>
+                <ion-input name="contacto" [(ngModel)]="objeto.contacto" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Correo:</ion-label>
+                <ion-input name="correo" [(ngModel)]="objeto.correo" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label>Cliente Activo</ion-label>
+                <ion-toggle checked name="clienteactivo" [(ngModel)]="objeto.clienteActivo"></ion-toggle>
+                <ion-label>Credito</ion-label>
+                <ion-toggle checked name="creditoactivo" [(ngModel)]="objeto.creditoActivo"></ion-toggle>
+                <ion-label position="floating">Dias de credito:</ion-label>
+                <ion-input name="diascredito" [(ngModel)]="objeto.diasCredito" type="number"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Limite de credito:</ion-label>
+                <ion-input name="limitecredito" [(ngModel)]="objeto.limiteCredito" type="number"></ion-input>
+                <ion-label position="floating">Limite de Notas:</ion-label>
+                <ion-input name="lmitenotas" [(ngModel)]="objeto.limiteNotas" type="number"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Saldo:</ion-label>
+                <ion-input name="saldo" [(ngModel)]="objeto.saldo" type="number"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">Observaciones:</ion-label>
+                <ion-textarea name="observaciones" [(ngModel)]="objeto.observaciones"></ion-textarea>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button (click)="salirConArgumentos()">
             <ion-icon name="save"></ion-icon>
         </ion-fab-button>
     </ion-fab>
+
 
 
 </ion-content>

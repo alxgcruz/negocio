@@ -7,6 +7,7 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { ZonasComponent } from './pages/zonas/zonas.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { GastosComponent } from './pages/gastos/gastos.component';
+import { ClientesComponent } from './pages/clientes/clientes.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -17,6 +18,8 @@ const routes: Routes = [
   { path: 'zonas', component: ZonasComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'gastos', component: GastosComponent },
+  { path: 'clientes', component: ClientesComponent },
+
 
 ];
 

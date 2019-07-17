@@ -39,6 +39,11 @@ export class AppComponent {
       titulo: 'Usuarios',
       icono: 'person',
       url: '/usuarios'
+    },
+    {
+      titulo: 'Clientes',
+      icono: 'person',
+      url: '/clientes'
     }
   ];
   constructor(

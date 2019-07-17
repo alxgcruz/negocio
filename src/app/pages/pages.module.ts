@@ -12,6 +12,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { ZonasComponent } from './zonas/zonas.component';
 import { GastosComponent } from './gastos/gastos.component';
+import { ClientesComponent } from './clientes/clientes.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { GastosComponent } from './gastos/gastos.component';
     UsuariosComponent,
     ZonasComponent,
     GastosComponent
+    ClientesComponent
   ],
   exports: [
     VentasComponent,
@@ -31,6 +33,7 @@ import { GastosComponent } from './gastos/gastos.component';
     UsuariosComponent,
     ZonasComponent,
     GastosComponent
+    ClientesComponent
   ],
   imports: [
     CommonModule,

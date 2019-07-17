@@ -1,0 +1,13 @@
+<app-header titulo="CLIENTES"></app-header>
+
+<ion-content>
+    <ion-searchbar placeholder="Buscar cliente..." animated></ion-searchbar>
+
+    <app-items [arreglo]="clientes" formulario="clientes"></app-items>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="abrirModal()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>
