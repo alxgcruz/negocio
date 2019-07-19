@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { CrudService } from '../../services/crud.service';
+import { empty } from 'rxjs';
 
 @Component({
   selector: 'app-modal-main',
@@ -10,7 +11,7 @@ import { CrudService } from '../../services/crud.service';
 export class ModalMainComponent implements OnInit {
 
   @Input() formulario;
-  @Input() objeto;
+  @Input() objeto: any;
   categorias: any[];
 
   constructor(private modal: ModalController, private crudService: CrudService) { }
@@ -23,11 +24,18 @@ export class ModalMainComponent implements OnInit {
         this.categorias = resp;
       });
       this.crudService.init('productos');
+      if (JSON.stringify(this.objeto) === '{}') {
+        this.objeto.precios = [null];
+      }
     }
   }
 
-  addObjeto() {
+  addField() {
+    this.objeto.precios.push(null);
+  }
 
+  removeField(i) {
+    this.objeto.precios.splice(i, 1);
   }
 
   closeModal() {

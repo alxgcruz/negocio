@@ -4,7 +4,7 @@
     <ion-label>{{ objeto.nombre }}</ion-label>
 </ion-item>
 
-<ion-list *ngIf="ver" color="#F1F1F1" lines="none" class="child-list" *ngIf="formulario==='productos'">
+<ion-list *ngIf="ver" color="#F1F1F1" lines="none" class="child-list">
 
     <ion-item>
         <ion-label><span>Categoria: </span>{{ objeto.categoria }}</ion-label>
@@ -16,7 +16,7 @@
         <ion-label><span>Existencia: </span>{{ objeto.existencia }}</ion-label>
     </ion-item>
     <ion-item>
-        <ion-button color="success" *ngIf="ver" slot="end" (click)="abrirModal( )">
+        <ion-button color="success" *ngIf="ver" slot="end" (click)="abrirModal()">
             <ion-icon name="eye"></ion-icon>Editar
         </ion-button>
         <ion-button color="danger" *ngIf="ver" slot="start" (click)="eliminar()">
