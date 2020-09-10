@@ -19,6 +19,12 @@ export class ItemComponent implements OnInit {
   constructor( private modal: ModalController, private crudService: CrudService ) { }
 
   ngOnInit() {
+    this.crudService.init('categorias');
+    this.crudService.getOne(this.objeto.categoria).subscribe( resp => {
+      if (resp !== null) {
+        this.objeto.categoria = resp.nombre;
+      }
+    });
     this.crudService.init( this.formulario );
   }
 
