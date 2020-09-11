@@ -18,16 +18,18 @@
                 </ion-select>
             </ion-item>
         </ion-col>
+    </ion-row>
+    <ion-row *ngIf="productoSeleccionado && productoSeleccionado.id || arrayProductos.length">
         <ion-col size="6">
             <ion-item>
                 <ion-label position="floating">Cantidad</ion-label>
-                <ion-input name="cantidad" [(ngModel)]="cantidad"></ion-input>
+                <ion-input type="number" name="cantidad" [(ngModel)]="cantidad" [disabled]="productoSeleccionado && !productoSeleccionado.id"></ion-input>
             </ion-item>
         </ion-col>
         <ion-col size="6">
             <ion-item>
-                <ion-label position="floating">Existencia</ion-label>
-                <ion-input>{{ productoSeleccionado.existencia }}</ion-input>
+                <ion-label position="floating" >Existencia</ion-label>
+                <ion-input class="ion-text-right" disabled>{{ productoSeleccionado.existencia }}</ion-input>
             </ion-item>
         </ion-col>
         <ion-col size="12">
@@ -44,9 +46,9 @@
         </ion-col>
     </ion-row>
 
-    <app-tabla-inventario [items]="arrayProductos"></app-tabla-inventario>
+    <app-tabla-inventario *ngIf="arrayProductos.length" [items]="arrayProductos"></app-tabla-inventario>
 
-    <ion-row>
+    <ion-row *ngIf="arrayProductos.length">
         <ion-col size="12">
             <ion-button (click)="guardar()">
                 Guardar

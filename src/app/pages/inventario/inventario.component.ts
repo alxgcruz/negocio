@@ -32,29 +32,32 @@ export class InventarioComponent implements OnInit {
   aumentar() {
 
     const idx = this.arrayProductos.indexOf(this.productoSeleccionado);
-    console.log('idx->', idx);
     if ( idx > -1 ) {
-      this.arrayProductos[idx].cantidad = this.arrayProductos[idx].cantidad + this.cantidad;
+      const suma: number = parseFloat(this.arrayProductos[idx].cantidad) + this.cantidad;
+      this.arrayProductos[idx].cantidad = suma;
     } else {
       this.productoSeleccionado.cantidad = this.cantidad;
       // tslint:disable-next-line: radix
       this.productoSeleccionado.cantidad = parseInt(this.productoSeleccionado.cantidad);
-      console.log('producto a agregar->', this.productoSeleccionado);
       this.arrayProductos.push( this.productoSeleccionado );
     }
-
+    this.limpiar();
   }
 
   disminuir() {
-
-    const idx = this.arrayProductos.indexOf({id: this.productoSeleccionado.id});
-    if ( idx !== -1 ) {
-      this.arrayProductos[idx].cantidad -= this.cantidad;
-    } else {
-      this.productoSeleccionado.cantidad = this.cantidad;
-      this.arrayProductos.push( this.productoSeleccionado );
+    const idx = this.arrayProductos.indexOf(this.productoSeleccionado);
+    if ( idx > -1 ) {
+      this.arrayProductos[idx].cantidad = this.arrayProductos[idx].cantidad - this.cantidad;
+      if (this.arrayProductos[idx].cantidad <= 0) {
+        this.arrayProductos.splice(idx, 1);
+      }
     }
+    this.limpiar();
+  }
 
+  limpiar() {
+    this.cantidad = 0;
+    this.productoSeleccionado = {};
   }
 
   guardar() {
